@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Hogwarts"
+    }
+  },
+  "defaultProject": "Hogwarts",
+  "cli": {
+    "analytics": false
+  }
 }
