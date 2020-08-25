@@ -16,4 +16,8 @@ export class HogwartsService {
   getStudents(){
     return this.http.get(`${ this.url }/students`);
   }
+
+  getTeachers(){
+    return this.http.get(`${ this.url}/staff`);
+  }
 }

@@ -8,7 +8,7 @@ import { HogwartsService } from '../../services/hogwarts.service';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor(private howartsService: HogwartsService) { }
+  constructor( private howartsService: HogwartsService ) { }
 
   Houses = ['slytherin', 'gryffindor', 'ravenclaw', 'hufflepuff'];
 

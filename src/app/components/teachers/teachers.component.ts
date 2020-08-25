@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HogwartsService } from '../../services/hogwarts.service';
 
 @Component({
   selector: 'app-teachers',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teachers.component.css']
 })
 export class TeachersComponent implements OnInit {
+  @Input() Teachers: any [] = [];
 
-  constructor() { }
+  constructor( private howartsService: HogwartsService ) { }
 
   ngOnInit(): void {
+    this.howartsService.getTeachers().subscribe( (res: any []) => {
+      this.Teachers = res;
+    })
+
   }
 
 }
