@@ -1,1 +1,22 @@
-<p>table works!</p>
+<div class="info" *ngIf="characters.length != 0" >
+    <h2 class="text-center">Personajes</h2>
+    <br />
+    <table class="table ">
+        <thead class="thead-dark">
+            <tr>
+                <th class="text-center"> Name </th>
+                <th class="text-center"> Patronus </th>
+                <th class="text-center"> Age </th>
+                <th class="text-center"> Image </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of characters" class="text-center" >
+                <td class="align-middle"> {{item.name}} </td>
+                <td class="align-middle"> {{item.patronus}} </td>
+                <td class="align-middle"> {{item.yearOfBirth | age}} </td>
+                <td class="align-middle"> <img [src]="item.image" class="img-thumbnail img-circle" >  </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>

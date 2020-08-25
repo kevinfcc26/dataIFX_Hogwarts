@@ -1,4 +1,16 @@
 <div class="container mt-5">
+    <!-- Example split danger button -->
+    <div class="btn-group">
 
-    <app-table></app-table>
+        <button type="button" class="btn btn-primary">Casa</button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+
+        <div class="dropdown-menu">
+            <a *ngFor="let house of Houses" class="dropdown-item" type="button" role="button" (click)="getHouse(house)"> {{house}} </a>
+        </div>
+
+    </div>
+    <app-table [characters] = "Characters" ></app-table>
 </div>
