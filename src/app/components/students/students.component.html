@@ -1,5 +1,77 @@
 
-<div>
-    <button class="btn btn-primary"> Agregar estudiante </button>
+<div class="text-right mr-5 mt-4">
+    <button class="btn btn-primary " data-toggle="modal" data-target="#staticBackdrop"> Agregar estudiante </button>
 </div>
+  
+  <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Agregar un nuevo estudiante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+
+                <form autocomplete="off" [formGroup]="forma" (ngSubmit)="save()">
+
+                    <div>
+                
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">Nombre</label>
+                            <div class="col">
+                                <input class="form-control" type="text" placeholder="Nombre" formControlName="name" [class.is-invalid]="invalidName">
+                                <small *ngIf="invalidName" class="text-danger">
+                                    Ingrese 5 letras
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label"> patronus</label>
+                            <div class="col">
+                                <input class="form-control" type="text" placeholder="Patronus" formControlName="patronus" [class.is-invalid]="invalidPatronus">
+                                <small *ngIf="invalidName" class="text-danger">
+                                    Este campo es requerido
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label"> Age </label>
+                            <div class="col">
+                                <input class="form-control" type="text" placeholder="Age" formControlName="age" [class.is-invalid]="invalidAge">
+                                <small *ngIf="invalidName" class="text-danger">
+                                    Este campo es requerido
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group row">
+                            <label class="col-2 col-form-label"> Image </label>
+                            <div class="col">
+                                <input class="form-control" type="text" placeholder="Age" formControlName="image" [class.is-invalid]="invalidImage">
+                                <small *ngIf="invalidName" class="text-danger">
+                                    Este campo es requerido
+                                </small>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cerrar </button>
+                        <button type="submit" class="btn btn-primary"> Guardar </button>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
 <app-table [characters]="Students"></app-table>
