@@ -7,12 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HogwartsService {
 
-  constructor(private http: HttpClient) {
-    console.log('service runnig ');
-   }
-  private url = 'http://hp-api.herokuapp.com/api/characters/house';
+  constructor(private http: HttpClient) { }
+  private url = 'http://hp-api.herokuapp.com/api/characters';
 
   getHouse( house: string ){
-    return this.http.get(`${ this.url }/${house}`);
+    return this.http.get(`${ this.url }/house/${house}`);
+  }
+  getStudents(){
+    return this.http.get(`${ this.url }/students`);
   }
 }

@@ -9,9 +9,7 @@ export class TableComponent implements OnInit {
 
   @Input() characters: any [] = [];
 
-  constructor() {
-    console.log(this.characters);
-   }
+  constructor() { }
 
   ngOnInit(): void {
   }

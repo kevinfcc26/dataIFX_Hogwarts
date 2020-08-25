@@ -20,7 +20,6 @@ export class CharactersComponent implements OnInit {
   getHouse( house: string){
     this.howartsService.getHouse(house).subscribe( (resp: any []) => {
       this.Characters = resp;
-      console.log(this.Characters);
     });
   }
 
